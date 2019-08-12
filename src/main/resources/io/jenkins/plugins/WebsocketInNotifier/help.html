@@ -1,0 +1,26 @@
+<div>
+    This plugin sends a websocket message when the build
+    <ul>
+        <li>Is about to start (phase=STARTED)</li>
+        <li>In post build (phase=COMPLETED)</li>
+    </ul>
+    All fields support the usage of variables.
+    <br>
+    <br>
+    Data is sent as websocket text in json format. It is a subset of the <a href="https://plugins.jenkins.io/notification" target="_blank">Notification plugin</a> and looks as follow:<br>
+    <pre>
+{
+    "name": "asgard",
+    "url": "job/asgard/",
+    "build": {
+        "full_url": "http://localhost:8080/job/asgard/18/",
+        "number": 18,
+        "phase": "COMPLETED",
+        "status": "SUCCESS",
+        "url": "job/asgard/18/",
+    }
+}
+</pre>
+    <br>
+    <strong>Note: For phase="STARTED" the build status of the previous build is given (if available)</strong>
+</div>

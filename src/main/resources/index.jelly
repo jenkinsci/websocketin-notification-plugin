@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    This plugin will send the status of the build at the beginning and the end through a websocket connection
+</div>
