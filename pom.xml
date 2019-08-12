@@ -8,7 +8,7 @@
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
-    <artifactId>websocket.in-notification</artifactId>
+    <artifactId>websocketin-notification</artifactId>
     <description>Allows users to send build notification via websocket.in or other websocket connections</description>
     <version>0.1</version>
     <packaging>hpi</packaging>
