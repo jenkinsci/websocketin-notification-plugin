@@ -14,6 +14,7 @@ import jenkins.model.Jenkins;
 import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONObject;
 import org.jenkinsci.Symbol;
+import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
 
@@ -150,9 +151,13 @@ public class WebsocketInNotifier extends Notifier implements SimpleBuildStep {
 
         public FormValidation doTestConnection(@QueryParameter("url") final String url,
                                                @QueryParameter("startMessage") final String startMessage,
-                                               @QueryParameter("additionalHttpHeaders") final String additionalHttpHeaders
+                                               @QueryParameter("additionalHttpHeaders") final String additionalHttpHeaders,
+                                               @AncestorInPath Item item
         ) {
-            Jenkins.get().checkPermission(Jenkins.ADMINISTER);
+            if (item == null) {
+                return FormValidation.ok();
+            }
+            item.checkPermission(Item.CONFIGURE);
             try {
                 Map<String, String> headers = null;
                 if (additionalHttpHeaders != null && !additionalHttpHeaders.equals("")) {
