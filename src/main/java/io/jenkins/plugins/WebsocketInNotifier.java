@@ -74,9 +74,10 @@ public class WebsocketInNotifier extends Notifier implements SimpleBuildStep {
     private JSONObject getBuildJson(Run<?, ?> run, boolean isPreBuild) {
         String resultStatus = null;
         Result result = run.getResult();
+        Run previousBuild = run.getPreviousBuild();
 
-        if (isPreBuild && run.getPreviousBuild() != null) {
-            result = run.getPreviousBuild().getResult();
+        if (isPreBuild && previousBuild != null) {
+            result = previousBuild.getResult();
         }
         if (result != null) {
             resultStatus = result.toString();
