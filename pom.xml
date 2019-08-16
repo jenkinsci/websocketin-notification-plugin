@@ -10,7 +10,7 @@
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>websocketin-notification</artifactId>
     <description>Allows users to send build notification via websocket.in or other websocket connections</description>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>hpi</packaging>
     <properties>
         <jenkins.version>2.164.1</jenkins.version>
@@ -37,7 +37,8 @@
         <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    </scm>
+      <tag>websocketin-notification-1.0</tag>
+  </scm>
 
     <repositories>
         <repository>
