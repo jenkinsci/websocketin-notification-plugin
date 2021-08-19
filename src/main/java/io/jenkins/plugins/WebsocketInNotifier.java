@@ -30,12 +30,14 @@ import java.util.stream.Collectors;
 public class WebsocketInNotifier extends Notifier implements SimpleBuildStep {
 
     private final String url;
+    private final boolean preventFailOnConnect;
     private final String additionalHttpHeaders;
     private final String startMessage;
 
     @DataBoundConstructor
-    public WebsocketInNotifier(String url, String startMessage, String additionalHttpHeaders) {
+    public WebsocketInNotifier(String url, boolean preventFailOnConnect, String startMessage, String additionalHttpHeaders) {
         this.url = url;
+        this.preventFailOnConnect = preventFailOnConnect;
         this.startMessage = startMessage;
         this.additionalHttpHeaders = additionalHttpHeaders;
     }
@@ -43,6 +45,8 @@ public class WebsocketInNotifier extends Notifier implements SimpleBuildStep {
     public String getUrl() {
         return url;
     }
+
+    public boolean getPreventFailOnConnect() { return preventFailOnConnect; }
 
     public String getAdditionalHttpHeaders() {
         return additionalHttpHeaders;
@@ -68,6 +72,11 @@ public class WebsocketInNotifier extends Notifier implements SimpleBuildStep {
             websocketClient.closeBlocking();
         } catch (URISyntaxException | InterruptedException | IOException e) {
             listener.getLogger().println(e.getMessage());
+        } catch (Exception e) {
+            listener.getLogger().println(e.getMessage());
+            if(!this.preventFailOnConnect) {
+                throw e;
+            }
         }
     }
 
