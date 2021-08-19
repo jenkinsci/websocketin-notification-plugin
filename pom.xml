@@ -32,7 +32,7 @@
         </dependency>
     </dependencies>
 
-    <url>https://wiki.jenkins.io/display/JENKINS/Websocket.in+Notification+Plugin</url>
+    <url>https://github.com/jenkinsci/websocketin-notification-plugin</url>
     <scm>
         <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
