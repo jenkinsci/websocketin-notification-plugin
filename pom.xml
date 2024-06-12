@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>3.46</version>
+    <version>4.83</version>
     <relativePath />
   </parent>
   <groupId>io.jenkins.plugins</groupId>
@@ -15,7 +15,7 @@
   <version>1.2.2-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <properties>
-    <jenkins.version>2.164.1</jenkins.version>
+    <jenkins.version>2.361</jenkins.version>
     <java.level>8</java.level>
   </properties>
   <name>Websocket.in Notification Plugin</name>
