@@ -12,11 +12,10 @@
   <groupId>io.jenkins.plugins</groupId>
   <artifactId>websocketin-notification</artifactId>
   <description>Allows users to send build notification via websocket.in/piesocket.com or other websocket connections</description>
-  <version>${revision}${changelist}</version>
+  <version>${changelist}</version>
   <packaging>hpi</packaging>
   <properties>
-    <revision>1.2.2</revision>
-    <changelist>-SNAPSHOT</changelist>
+    <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/websocketin-notification-plugin</gitHubRepo>
     <jenkins.version>2.426.1</jenkins.version>
   </properties>
