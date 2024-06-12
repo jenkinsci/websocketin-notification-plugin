@@ -15,8 +15,8 @@
   <version>1.2.2-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <properties>
-    <jenkins.version>2.361</jenkins.version>
-    <java.level>8</java.level>
+    <jenkins.version>2.361.1</jenkins.version>
+    <java.level>11</java.level>
   </properties>
   <name>Websocket.in Notification Plugin</name>
   <licenses>
