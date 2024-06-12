@@ -12,10 +12,13 @@
   <groupId>io.jenkins.plugins</groupId>
   <artifactId>websocketin-notification</artifactId>
   <description>Allows users to send build notification via websocket.in/piesocket.com or other websocket connections</description>
-  <version>1.2.2-SNAPSHOT</version>
+  <version>${revision}${changelist}</version>
   <packaging>hpi</packaging>
   <properties>
-    <jenkins.version>2.361.1</jenkins.version>
+    <revision>1.2.2</revision>
+    <changelist>-SNAPSHOT</changelist>
+    <gitHubRepo>jenkinsci/websocketin-notification-plugin</gitHubRepo>
+    <jenkins.version>2.426.1</jenkins.version>
   </properties>
   <name>Websocket.in Notification Plugin</name>
   <licenses>
@@ -29,16 +32,16 @@
     <dependency>
       <groupId>org.java-websocket</groupId>
       <artifactId>Java-WebSocket</artifactId>
-      <version>1.5.2</version>
+      <version>1.5.6</version>
     </dependency>
   </dependencies>
 
   <url>https://github.com/jenkinsci/websocketin-notification-plugin</url>
   <scm>
-    <connection>scm:git:https://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
-    <developerConnection>scm:git:https://github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    <tag>HEAD</tag>
+    <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:https://github.com/${gitHubRepo}.git</developerConnection>
+    <url>https://github.com/${gitHubRepo}</url>
+    <tag>${scmTag}</tag>
   </scm>
 
   <repositories>
